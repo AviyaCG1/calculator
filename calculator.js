@@ -38,6 +38,12 @@ function operate(a, b, operator){
 }
 
 
+
+const display = document.querySelector('#display');
+
+const numberKeys = document.querySelectorAll('.number, .operator');
+numberKeys.forEach(key => key.addEventListener('click', getInput));
+
 function getInput(e){
     if (e.target.classList =='number'){
         display.innerText += e.target.innerText;
@@ -50,6 +56,11 @@ function getInput(e){
     return 'getInput ERROR';
 }
 
-const display = document.querySelector('#display');
-const numberKeys = document.querySelectorAll('.number, .operator');
-numberKeys.forEach(key => key.addEventListener('click', getInput));
+const back = document.querySelector('#backspace');
+back.addEventListener('click', backspace);
+
+function backspace(){
+    displayText = display.innerText.split('');
+    displayText.splice(-1);
+    display.innerText = displayText.join('');
+}
