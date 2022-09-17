@@ -20,3 +20,19 @@ function divide(a, b){
     if (b === 0) return 'ERROR - cant divide by zero'
     return a / b;
 }
+//This function get two numbers and an operator,
+//calls the operator function with (a, b) as arguments.
+function operate(a, b, operator){
+    switch (operator) {
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtruct(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+        default:
+            return "ERROR - invalid operator"
+    }
+}
