@@ -4,42 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="calculator.js"></script>
+    <script src="calculator.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
 <body>
     <table>
         <tr>
-            <td id="display" colspan="4">Display - should span on four cells</td>
+            <td id="display" colspan="4"></td>
             <td>=</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>+</td>
+            <td class="number">1</td>
+            <td class="number">2</td>
+            <td class="number">3</td>
+            <td class="operator">+</td>
             <td></td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>-</td>
+            <td class="number">4</td>
+            <td class="number">5</td>
+            <td class="number">6</td>
+            <td class="operator">-</td>
             <td></td>
         </tr>
         <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>*</td>
+            <td class="number">7</td>
+            <td class="number">8</td>
+            <td class="number">9</td>
+            <td class="operator">*</td>
             <td></td>
         </tr>
         <tr>
             <td>back</td>
-            <td>0</td>
-            <td>.</td>
-            <td>/</td>
+            <td class="number">0</td>
+            <td class="number">.</td>
+            <td class="operator">/</td>
             <td>Clear</td>
         </tr>
     </table>

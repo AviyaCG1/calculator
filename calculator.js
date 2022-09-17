@@ -36,3 +36,20 @@ function operate(a, b, operator){
             return "ERROR - invalid operator"
     }
 }
+
+
+function getInput(e){
+    if (e.target.classList =='number'){
+        display.innerText += e.target.innerText;
+        return;
+    }
+    if (e.target.classList == 'operator'){
+        display.innerText += e.target.innerText;
+        return;
+    }
+    return 'getInput ERROR';
+}
+
+const display = document.querySelector('#display');
+const numberKeys = document.querySelectorAll('.number, .operator');
+numberKeys.forEach(key => key.addEventListener('click', getInput));

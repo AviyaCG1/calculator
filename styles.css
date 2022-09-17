@@ -15,11 +15,24 @@ td{
     border: 1px solid blue;
     border-radius: 20px;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bolder;
     text-align: center;
     padding: 2px;
 
     width: 100px;
     height: 100px;
+}
+
+.number{
+    font-size: 40px;
+}
+
+.operator{
+    font-size: 50px;
+}
+
+#display{
+    text-align: left;
+    font-size: 60px;
 }
 
