@@ -64,3 +64,10 @@ function backspace(){
     displayText.splice(-1);
     display.innerText = displayText.join('');
 }
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', clearDisplay);
+
+function clearDisplay(){
+    display.innerText = '';
+}
