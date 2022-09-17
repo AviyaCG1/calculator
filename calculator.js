@@ -41,8 +41,8 @@ function operate(a, b, operator){
 
 const display = document.querySelector('#display');
 
-const numberKeys = document.querySelectorAll('.number, .operator');
-numberKeys.forEach(key => key.addEventListener('click', getInput));
+const inputKeys = document.querySelectorAll('.number, .operator');
+inputKeys.forEach(key => key.addEventListener('click', getInput));
 
 function getInput(e){
     if (e.target.classList =='number'){
