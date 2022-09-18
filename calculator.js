@@ -117,3 +117,14 @@ function operandIsValid(operand){
     if (operand == '') return false;// check for empty strings
     return true;
 }
+
+//keyboard binding
+
+window.addEventListener('keydown', getKeyboard);
+
+function getKeyboard(e){
+    const key = document.querySelector(`td[data-key = "${e.keyCode}"]`)
+    if (key != null){
+        key.dispatchEvent(new Event('click'));
+    }
+}
