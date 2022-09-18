@@ -113,5 +113,6 @@ function calculateDisplayValue(){
 function operandIsValid(operand){
     if (operand.split('.').length > 2) return false;
     if (operand.startsWith('0') && operand != '0') return false;
+    if (operand == '') return false;
     return true;
 }
