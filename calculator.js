@@ -79,8 +79,8 @@ equals.addEventListener('click', calculate);
 
 function calculate(){
     outcome = calculateDisplayValue().toString();
-    if (outcome.length > 12){
-        display.innerText = outcome.split('').splice(0,12).join('');
+    if (outcome.length > 20){
+        display.innerText = outcome.split('').splice(0,20).join('');
     } else {
         display.innerText = outcome;
     }
@@ -110,9 +110,10 @@ function calculateDisplayValue(){
     return operands.reduce((outcome, operand, index) => operate(outcome, operand, operators[index-1]));
 }
 
+// get a string operand and check if itws valid as a number.
 function operandIsValid(operand){
-    if (operand.split('.').length > 2) return false;
-    if (operand.startsWith('0') && operand != '0') return false;
-    if (operand == '') return false;
+    if (operand.split('.').length > 2) return false; // check for multiple dots
+    if (operand.startsWith('0') && operand != '0') return false; 
+    if (operand == '') return false;// check for empty strings
     return true;
 }

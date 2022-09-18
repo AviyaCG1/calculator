@@ -1,38 +1,43 @@
 body{
-    background-color: rgb(30, 30, 30);
-    color: rgb(230, 230, 230);
+    background-color: rgb(99, 100, 102);
+    color: rgb(30, 29, 29);
 }
 
 
 table{
-    border: 1px solid black;
+    border-radius: 20px;
     margin: auto;
-    padding: 6px;
+    padding: 30px;
     
     columns: 5;
+    background-color: rgb(30, 29, 29);
 }
 td{
-    border: 1px solid blue;
     border-radius: 20px;
     font-size: 24px;
     font-weight: bolder;
     text-align: center;
     padding: 2px;
 
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+
+    background-color: rgb(15, 104, 213);
 }
 
 .number{
     font-size: 40px;
+    background-color: rgb(99, 100, 102);
 }
 
 .operator{
     font-size: 50px;
+    background-color: rgb(213, 127, 15);
 }
 
 #display{
     text-align: left;
-    font-size: 60px;
+    font-size: 40px;
+    background-color: rgb(230, 230, 230);
 }
 
