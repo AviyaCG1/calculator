@@ -38,7 +38,7 @@ function operate(a, b, operator){
 }
 
 
-
+// input key binding
 const display = document.querySelector('#display');
 
 const inputKeys = document.querySelectorAll('.number, .operator');
@@ -70,4 +70,48 @@ clear.addEventListener('click', clearDisplay);
 
 function clearDisplay(){
     display.innerText = '';
+}
+
+//Calculate functions
+
+const equals = document.querySelector('#equals');
+equals.addEventListener('click', calculate);
+
+function calculate(){
+    outcome = calculateDisplayValue().toString();
+    if (outcome.length > 12){
+        display.innerText = outcome.split('').splice(0,12).join('');
+    } else {
+        display.innerText = outcome;
+    }
+
+}
+
+function calculateDisplayValue(){
+    const displayText = display.innerText.split('');
+    let operands = [], operators = [];
+    let currentOperand = '';
+    for (let index = 0; index < displayText.length; index++) {
+        const char = displayText[index];
+        if (['+', '-', '*', '/'].some(op => op == char)){// if char is an operator
+            if (!operandIsValid(currentOperand)) return 'Syntax Error';
+            operands.push(parseFloat(currentOperand));
+            operators.push(char);
+            currentOperand = '';
+        } else {// if char is a digit or a dot
+            currentOperand += char;// add digit to current operand
+        }
+    }
+    if (!operandIsValid(currentOperand)) return 'Syntax Error';
+    operands.push(parseFloat(currentOperand));// push last operand to operands
+    console.table(operands);
+    console.table(operators);
+
+    return operands.reduce((outcome, operand, index) => operate(outcome, operand, operators[index-1]));
+}
+
+function operandIsValid(operand){
+    if (operand.split('.').length > 2) return false;
+    if (operand.startsWith('0') && operand != '0') return false;
+    return true;
 }
